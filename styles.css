@@ -1,0 +1,61 @@
+:root {
+  --bg: #111;
+  --fg: #eee;
+  --accent: #4a9;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  padding: 1rem;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+h1 { margin: 0; font-size: 1.5rem; }
+.lang-switch button {
+  margin-left: 0.5rem;
+  background: #333;
+  color: #fff;
+  border: none;
+  padding: 0.3rem 0.6rem;
+  cursor: pointer;
+}
+.lang-switch button.active { background: var(--accent); }
+.canvas-container {
+  max-width: 100%;
+  margin-bottom: 1rem;
+  background: #000;
+}
+canvas {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+.controls {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.8rem;
+  align-items: center;
+}
+label { display: block; font-size: 0.9rem; }
+input[type=range], input[type=color], input[type=file], button {
+  width: 100%;
+  margin-top: 0.2rem;
+}
+button {
+  background: var(--accent);
+  color: #000;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  font-weight: bold;
+}
+@media (max-width: 600px) {
+  .controls { grid-template-columns: 1fr; }
+}
